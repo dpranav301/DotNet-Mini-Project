@@ -1,0 +1,64 @@
+﻿@model miniProject.Models.Register
+
+@{
+    //both ViewData and TempData are available
+    string a = (string)ViewData["CityName"];
+
+}
+
+
+<partial name="PartialView"></partial>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Register</h4>
+    <hr />
+    <dl class="row">
+        
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LoginName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LoginName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmailId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmailId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+       
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CityNo)
+        </dt>
+        <dd class="col-sm-10">
+            @a
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="UserNo" class="form-control" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
